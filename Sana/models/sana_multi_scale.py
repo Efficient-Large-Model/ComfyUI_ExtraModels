@@ -193,6 +193,7 @@ class SanaMS(Sana):
             attn_type=attn_type,
             ffn_type=ffn_type,
             use_pe=use_pe,
+            pe_interpolation=pe_interpolation,
             y_norm_scale_factor=y_norm_scale_factor,
             patch_embed_kernel=patch_embed_kernel,
             mlp_acts=mlp_acts,

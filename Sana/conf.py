@@ -51,6 +51,30 @@ sana_conf = {
 		},
 		"sampling_settings" : sampling_settings,
 	},
+	"SanaMS_1600M_P1_D20_2K": {
+		"target": "SanaMS",
+		"unet_config": {
+			"in_channels": 32,
+			"input_size": 64,
+			"depth": 20,
+			"hidden_size": 2240,
+			"patch_size": 1,
+			"num_heads": 20,
+			"linear_head_dim": 32,
+			"model_max_length": 300,
+			"y_norm": True,
+			"attn_type": "linear",
+			"ffn_type": "glumbconv",
+			"mlp_ratio": 2.5,
+			"mlp_acts": ["silu", "silu", None],
+			"use_pe": True,
+			"pe_interpolation": 1.0,
+			"pred_sigma": False,
+			"learn_sigma": False,
+			"fp32_attention": True,
+		},
+		"sampling_settings" : sampling_settings,
+	},
 }
 
 sana_res = {
@@ -95,4 +119,5 @@ sana_res = {
 sana_res.update({
 	"SanaMS_600M_P1_D28": sana_res["1024px"],
 	"SanaMS_1600M_P1_D20": sana_res["1024px"],
+	"SanaMS_1600M_P1_D20_2K": sana_res["2K"],
 })
