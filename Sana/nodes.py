@@ -5,6 +5,7 @@ from huggingface_hub import snapshot_download
 
 from .conf import sana_conf, sana_res
 from .loader import load_sana
+from ..utils.dtype import string_to_dtype
 from nodes import EmptyLatentImage
 
 if not "sana" in folder_paths.folder_names_and_paths:
@@ -36,6 +37,7 @@ class SanaCheckpointLoader:
 					] + folder_paths.get_filename_list("checkpoints"),
 				),
 				"model": (list(sana_conf.keys()), {"default":"SanaMS_1600M_P1_D20"}),
+				"dtype": (dtypes,),
 			}
 		}
 	RETURN_TYPES = ("MODEL",)
@@ -44,7 +46,9 @@ class SanaCheckpointLoader:
 	CATEGORY = "ExtraModels/Sana"
 	TITLE = "Sana Checkpoint Loader"
 
-	def load_checkpoint(self, ckpt_name, model):
+	def load_checkpoint(self, ckpt_name, model, dtype):
+		dtype = string_to_dtype(dtype, "unet")
+
 		if ckpt_name == "Efficient-Large-Model/Sana_1600M_1024px_MultiLing":
 			ckpt_path = os.path.join(folder_paths.models_dir, "sana", "models--sana--sana-1600m-1024px-multilingual")
 			model_conf = sana_conf['SanaMS_1600M_P1_D20']
@@ -100,6 +104,7 @@ class SanaCheckpointLoader:
 		model = load_sana(
 			model_path = ckpt_path,
 			model_conf = model_conf,
+			dtype = dtype,
 		)
 		return (model,)
 

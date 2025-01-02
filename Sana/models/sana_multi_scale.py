@@ -296,15 +296,15 @@ class SanaMS(Sana):
 
         t = self.t_embedder(timestep)  # (N, D)
 
-        y_lens = ((y != 0).sum(dim=3) > 0).sum(dim=2).squeeze().tolist()
-        y_lens = [y_lens[1]] * bs
+        y_lens = ((y != 0).sum(dim=3) > 0).sum(dim=2).squeeze()
+        y_lens = [y_lens.item() if torch.is_tensor(y_lens) and y_lens.numel() == 1 else y_lens[1]] * bs
 
         mask = torch.zeros((len(y_lens), self.model_max_length), dtype=torch.int).to(x.device)
         for i, count in enumerate(y_lens):
             mask[i, :count] = 1
 
         t0 = self.t_block(t)
-        y = self.y_embedder(y, self.training, mask=mask)  # (N, D)
+        y = self.y_embedder(y, self.training)  # (N, D)
         if self.y_norm:
             y = self.attention_y_norm(y)
 
