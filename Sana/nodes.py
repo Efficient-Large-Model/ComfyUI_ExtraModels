@@ -31,6 +31,7 @@ class SanaCheckpointLoader:
 						"Efficient-Large-Model/Sana_1600M_1024px_BF16",
 						"Efficient-Large-Model/Sana_1600M_1024px",
 						"Efficient-Large-Model/Sana_1600M_2Kpx_BF16",
+						"Efficient-Large-Model/Sana_1600M_4Kpx_BF16",
 						"Efficient-Large-Model/Sana_1600M_512px",
 						"Efficient-Large-Model/Sana_600M_1024px",
 						"Efficient-Large-Model/Sana_600M_512px",
@@ -79,6 +80,12 @@ class SanaCheckpointLoader:
 			if not os.path.exists(os.path.join(ckpt_path, "checkpoints/Sana_1600M_2Kpx_BF16.pth")):
 				snapshot_download(ckpt_name, local_dir=ckpt_path)
 			ckpt_path = f"{ckpt_path}/checkpoints/Sana_1600M_2Kpx_BF16.pth"
+		elif ckpt_name == "Efficient-Large-Model/Sana_1600M_4Kpx_BF16":
+			ckpt_path = os.path.join(folder_paths.models_dir, "sana", "models--sana--sana-1600m-4kpx-bf16")
+			model_conf = sana_conf['SanaMS_1600M_P1_D20_4K']
+			if not os.path.exists(os.path.join(ckpt_path, "checkpoints/Sana_1600M_4Kpx_BF16.pth")):
+				snapshot_download(ckpt_name, local_dir=ckpt_path)
+			ckpt_path = f"{ckpt_path}/checkpoints/Sana_1600M_4Kpx_BF16.pth"			
 		elif ckpt_name == "Efficient-Large-Model/Sana_1600M_512px":
 			ckpt_path = os.path.join(folder_paths.models_dir, "sana", "models--sana--sana-1600m-512px")
 			model_conf = sana_conf["SanaMS_1600M_P1_D20"]
