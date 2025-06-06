@@ -221,106 +221,6 @@
         ]
       },
       {
-        "id": 9,
-        "type": "SanaCheckpointLoader",
-        "pos": [
-          493.737548828125,
-          687.6068115234375
-        ],
-        "size": [
-          315,
-          130
-        ],
-        "flags": {},
-        "order": 2,
-        "mode": 0,
-        "inputs": [],
-        "outputs": [
-          {
-            "name": "model",
-            "type": "MODEL",
-            "slot_index": 0,
-            "links": [
-              35
-            ]
-          }
-        ],
-        "properties": {
-          "Node name for S&R": "SanaCheckpointLoader",
-          "cnr_id": "ComfyUI_ExtraModels",
-          "ver": "92f556ed4d3bec1a3f16117d2de10f195c36d68e"
-        },
-        "widgets_values": [
-          "Efficient-Large-Model/Sana_Sprint_1.6B_1024px",
-          "SanaSprint_1600M_P1_D20",
-          "FP32",
-          true
-        ]
-      },
-      {
-        "id": 20,
-        "type": "PreviewImage",
-        "pos": [
-          1660.9478759765625,
-          727.8193969726562
-        ],
-        "size": [
-          513.6846923828125,
-          598.8845825195312
-        ],
-        "flags": {},
-        "order": 10,
-        "mode": 0,
-        "inputs": [
-          {
-            "name": "images",
-            "type": "IMAGE",
-            "link": 37
-          }
-        ],
-        "outputs": [],
-        "properties": {
-          "Node name for S&R": "PreviewImage"
-        },
-        "widgets_values": []
-      },
-      {
-        "id": 10,
-        "type": "ExtraVAELoader",
-        "pos": [
-          1276.7528076171875,
-          1018.2510375976562
-        ],
-        "size": [
-          315,
-          106
-        ],
-        "flags": {},
-        "order": 3,
-        "mode": 0,
-        "inputs": [],
-        "outputs": [
-          {
-            "name": "VAE",
-            "type": "VAE",
-            "slot_index": 0,
-            "links": [
-              2
-            ]
-          }
-        ],
-        "properties": {
-          "Node name for S&R": "ExtraVAELoader",
-          "cnr_id": "ComfyUI_ExtraModels",
-          "ver": "92f556ed4d3bec1a3f16117d2de10f195c36d68e"
-        },
-        "widgets_values": [
-          "mit-han-lab/dc-ae-f32c32-sana-1.1-diffusers",
-          "dcae-f32c32-sana-1.1-diffusers",
-          "FP32"
-        ]
-      },
-      {
         "id": 17,
         "type": "ScmModelSampling",
         "pos": [
@@ -448,13 +348,113 @@
           "Node name for S&R": "KSampler"
         },
         "widgets_values": [
-          763443243300024,
+          741494662914062,
           "randomize",
           2,
           1,
           "scm",
           "sgm_uniform",
           1
+        ]
+      },
+      {
+        "id": 20,
+        "type": "PreviewImage",
+        "pos": [
+          1660.9478759765625,
+          727.8193969726562
+        ],
+        "size": [
+          513.6846923828125,
+          598.8845825195312
+        ],
+        "flags": {},
+        "order": 10,
+        "mode": 0,
+        "inputs": [
+          {
+            "name": "images",
+            "type": "IMAGE",
+            "link": 37
+          }
+        ],
+        "outputs": [],
+        "properties": {
+          "Node name for S&R": "PreviewImage"
+        },
+        "widgets_values": []
+      },
+      {
+        "id": 9,
+        "type": "SanaCheckpointLoader",
+        "pos": [
+          493.737548828125,
+          687.6068115234375
+        ],
+        "size": [
+          315,
+          130
+        ],
+        "flags": {},
+        "order": 2,
+        "mode": 0,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "model",
+            "type": "MODEL",
+            "slot_index": 0,
+            "links": [
+              35
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "SanaCheckpointLoader",
+          "cnr_id": "ComfyUI_ExtraModels",
+          "ver": "92f556ed4d3bec1a3f16117d2de10f195c36d68e"
+        },
+        "widgets_values": [
+          "Efficient-Large-Model/Sana_Sprint_0.6B_1024px",
+          "SanaSprint_600M_P1_D28",
+          "BF16",
+          true
+        ]
+      },
+      {
+        "id": 10,
+        "type": "ExtraVAELoader",
+        "pos": [
+          1276.7528076171875,
+          1018.2510375976562
+        ],
+        "size": [
+          315,
+          106
+        ],
+        "flags": {},
+        "order": 3,
+        "mode": 0,
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "VAE",
+            "type": "VAE",
+            "slot_index": 0,
+            "links": [
+              2
+            ]
+          }
+        ],
+        "properties": {
+          "Node name for S&R": "ExtraVAELoader",
+          "cnr_id": "ComfyUI_ExtraModels",
+          "ver": "92f556ed4d3bec1a3f16117d2de10f195c36d68e"
+        },
+        "widgets_values": [
+          "mit-han-lab/dc-ae-f32c32-sana-1.1-diffusers",
+          "dcae-f32c32-sana-1.1-diffusers",
+          "FP32"
         ]
       }
     ],
@@ -560,10 +560,10 @@
     "config": {},
     "extra": {
       "ds": {
-        "scale": 0.7627768444385488,
+        "scale": 0.6303940863128502,
         "offset": [
-          -469.3002701216284,
-          -478.2539864725517
+          -473.1843955625967,
+          -440.3112875760059
         ]
       },
       "frontendVersion": "1.21.6"
