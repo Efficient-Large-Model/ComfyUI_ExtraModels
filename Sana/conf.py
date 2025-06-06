@@ -185,6 +185,8 @@ sana_conf = {
 			"linear_head_dim": 32,
 			"model_max_length": 300,
 			"y_norm": True,
+			"qk_norm": True,
+			"cross_norm": True,
 			"attn_type": "linear",
 			"ffn_type": "glumbconv",
 			"mlp_ratio": 2.5,
